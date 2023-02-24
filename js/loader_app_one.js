@@ -1,0 +1,15 @@
+(()=>{"use strict";
+    const e=document.querySelector(".firstscreane");
+    document.querySelector(".wrapperLines"),document.body.style.visibility="hidden";
+    const t=document.querySelector(".screanemain");
+    let o=Boolean(sessionStorage.getItem("newVisit"));
+    o||t.classList.add("show");const n=document.querySelector(".butyes");
+    n.addEventListener("click",(e=>{document.querySelector(".maturityCheckboxElement"),o=!0,sessionStorage.setItem("newVisit",o),t.classList.remove("show")}));
+    const s=document.querySelector(".loader_mask"),i=$("img").length,c=Math.ceil(100/i);let r=0,l=0,d=Date.now();
+    function u(){r+=c,o&&(s.style.left=`${r}%`),r>=100||l===i||l++}function a(){const t=Date.now()>d+1e3?0:d+1e3-Date.now();
+    document.fonts.ready.then((o=>{setTimeout((()=>{e&&e.classList.add("move"),window.scrollTo(0,0),document.body.style.visibility="visible",setTimeout((()=>{document.body.style.overflow="auto",function(){const e=window.location.hash;
+        if(!e.trim().length)return;
+        const t=document.querySelector(e);
+        t&&setTimeout((()=>{t.scrollIntoView()}),1)}()}),1e3)}),t+300)}))}s.style.left=`${r}%`,document.body.style.overflow="hidden",window.addEventListener("load",(async e=>{if(await new Promise((e=>{o?e(""):n.addEventListener("click",(n=>{document.querySelector(".maturityCheckboxElement"),o=!0,sessionStorage.setItem("newVisit",o),t.classList.remove("show"),e("")}))})),o&&(s.style.left=`${r}%`),0===i)return s.style.left="100%",void a();
+        a()}));for(let e=0;e<i;e++){let t=new Image;
+            t.src=document.images[e].src,t.onload=u,t.onerror=u}(()=>{function e(){return!1}document.ondragstart=e,document.onselectstart=e,document.oncontextmenu=e})()})();
